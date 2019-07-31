@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>黑暗堡垒·炼狱传奇</title>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+
+<!-- UC强制全屏 -->
+<meta name="full-screen" content="yes">
+<!-- QQ强制全屏 -->
+<meta name="x5-fullscreen" content="true">
+<!-- IOS启用 WebApp 全屏模式 -->
+<meta name="apple-mobile-web-app-capable" content="yes" />
+
+<script type="text/javascript" src="./js/lufylegend-1.10.1.min.js"></script> 
+<!--<script type="text/javascript" src="./js/lufylegend-1.10.1.simple.min.js"></script> -->
+<script type="text/javascript" src="./js/lufylegend.LoadingSample4-0.1.0.min.js"></script> 
+<script type="text/javascript" src="./js/lufylegend.ui-0.14.1.min.js"></script>
+
+
+<script type="text/javascript" src="./user_v0.1.js"></script> 
+
+<style>
+		body{
+			margin:0;padding:0;
+		}
+		div{
+			margin:0;padding:0;
+		}
+		canvas{
+			margin:0;padding:0;
+		}
+	</style>
+<script>
+
+function doScroll() {
+	//pageXOffset 和 pageYOffset 属性返回文档在窗口左上角水平和垂直方向滚动的像素。
+	if(window.pageYOffset === 0) {
+		//scrollTo() 方法可把内容滚动到指定的坐标。
+		window.scrollTo(0, 1);
+	}
+}
+
+window.onload = function() {
+	//0.1秒（100 毫秒）后更新 init()
+	setTimeout(doScroll, 100);
+	//游戏入口
+	//初始化 LEvent.INIT 事件对象的 type 属性值，当引擎初始化是在window.onload事件之后，需要使用此属性
+	init(20,"mylegend",506,815,main,LEvent.INIT);
+
+}
+// iPhone  html5屏幕旋转事件 onorientationchange
+window.onorientationchange = function() {
+	setTimeout(doScroll, 100);
+};
+
+//浏览器尺寸变化响应事件 ：
+//window.onresize = function(){....}
+//这里须要注意的是，onresize响应事件处理中。获取到的页面尺寸參数是变更后的參数。
+// Android  html5屏幕旋转事件
+window.onresize = function() {
+	setTimeout(doScroll, 100);
+}
+</script>
+</head>
+<body style="margin:0px 0px 0px 0px;padding:0px 0px 0px 0px;">
+<div id="mylegend">loading……</div>
+</body>
+</html>
